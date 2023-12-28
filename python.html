@@ -13,7 +13,7 @@
 
     <header>
         <h1>AzizKitten Package Guide</h1>
-        <p>Version: 10.0.0</p>
+        <p>Version: 10.1.0</p>
     </header>
 
     <nav>
@@ -44,10 +44,11 @@
         <section id="usage">
             <h2>Usage</h2>
             <p><li>mystery()</li> : This is a game with 3 diffrent levels. In each level you have to guess a number (or a number and a letter for the hard level) but you have a limit of attempts.</p>
-            <p><li>mental_calculation()</li> : This is a game in math. You will get diffrent operations with numbers from 0 to 10 and you have 30 seconds to get the highest points possible</p>
-            <p><li>root(num, nth)</li> : Find a root for any real number. Where <strong>num</strong> is the number that you want to find its root and <strong>nth</strong> is the index (default is 2 for the square root).</p>
+            <p><li>ment_calc()</li> : This is a game in math. You will get diffrent operations with numbers from 0 to 10 and you have 30 seconds to get the highest points possible</p>
+            <p><li>root(num, nth)</li> : Find a root for any number. Where <strong>num</strong> is the number that you want to find its root and <strong>nth</strong> is the index (default is 2 for the square root).</p>
             <p><li>quad(a, b, c)</li> : Solving a quadratic equation with all the steps including the sign board.</p>
             <p><li>among_us(PlayersNumber, lang)</li> : This is a good game to play it with your friends or your family. And it is not the among us that you know. This is a little diffrent. Every Player take the phone and register his name. He has a chance to be a crewmate or an imposter. If he got crewmate he will get a word that each crewmate will get it. However, the imposter will not get it. After you register your name press enter to hide what you get and give the phone to the next player to register himself. Therefore, the first one that he registred himself start by saying a word related to the original one. Then next player say another word and so on... But the imposter doesn't know what is the word so he tries his best to know them what are they talking about and say a word. After some turns anyone can stop the game and start voting. Each one vote for what he want to kick and who gets the most vote he get out of the game. If he is the imposter so crewmates won. If not, the game continues until the importer get kicked or still only 2 players so the imposter won. <strong>NOTE: lang</strong> is the language of the word (ar for arabic / fr for french / eng for english (default)</Em></p>
+            <p><li>bin_rep(n)</li> : Get the binary representation of "n"</p>
         </section><hr>
 
         <section id="examples">
@@ -57,11 +58,11 @@
                 <code><span style="color: rgb(247, 58, 231);">from</span> <span style="color: #05b2c9;">AzizKitten</span> <span style="color: rgb(247, 58, 231);">import</span> <span style="color: #11e056;">mystery</span><br><span style="color: #11e056;">mystery</span>()</code>
             </pre>
             <p>OUTPUT:</p><img src="assets/img/mystery-eg.PNG" alt="mystery-output">
-            <p><strong>mental_calculation()</strong><br>Importing code:</p>
+            <p><strong>ment_calc()</strong><br>Importing code:</p>
             <pre>
-                <code><span style="color: rgb(247, 58, 231);">from</span> <span style="color: #05b2c9;">AzizKitten</span> <span style="color: rgb(247, 58, 231);">import</span> <span style="color: #11e056;">mental_calculation</span><br><span style="color: #11e056;">mental_calculation</span>()</code>
+                <code><span style="color: rgb(247, 58, 231);">from</span> <span style="color: #05b2c9;">AzizKitten</span> <span style="color: rgb(247, 58, 231);">import</span> <span style="color: #11e056;">ment_calc</span><br><span style="color: #11e056;">ment_calc</span>()</code>
             </pre>
-            <p>OUTPUT:</p><img src="assets/img/mental_calculation-eg.PNG" alt="mental_calculation-output">
+            <p>OUTPUT:</p><img src="assets/img/mental_calculation-eg.PNG" alt="ment_calc-output">
             <p><strong>root(num, nth)</strong><br>Importing code:</p>
             <pre>
                 <code><span style="color: rgb(247, 58, 231);">from</span> <span style="color: #05b2c9;">AzizKitten</span> <span style="color: rgb(247, 58, 231);">import</span> <span style="color: #11e056;">root</span><br>x = <span style="color: #11e056;">root</span>(<span style="color: slateblue;">8</span>, <span style="color: slateblue;">3</span>) <span style="color: grey;">#x = 2.0</span><br>y = <span style="color: #11e056;">root</span>(<span style="color: slateblue;">9</span>) <span style="color: grey;">#y = 3.0</span></code>
@@ -73,8 +74,8 @@
             <p>OUTPUT:</p><img src="assets/img/quad-output.PNG" alt="quad-output">
             <p>Btw if a - b + c = 0 or a + b + c = 0 were possible, the function will not calculate Δ. It will use the other method instead. And if the Δ was negative the function will show you the steps and stops when the final result of Δ < 0. If you want to get a value of a solution you can just do it like that:</p>
             <pre>
-                <code>quad</span>(<span style="color: slateblue;">-1</span>, <span style="color: slateblue;">-2</span>, <span style="color: slateblue;">3</span>)<br>sol1 = <span style="color: #11e056;">quad</span>.x1 <span style="color: grey;">#sol1 = 1</span><br>sol2 = <span style="color: #11e056;">quad</span>.x2 <span style="color: grey;">#sol2 = -3.0</span></code>
-                <code>quad</span>(<span style="color: slateblue;">1</span>, <span style="color: slateblue;">2</span>, <span style="color: slateblue;">1</span>)<br>sol1 = <span style="color: #11e056;">quad</span>.x0 <span style="color: grey;">#sol1 = -1.0</code>
+                <code><span style="color: #11e056;">quad</span></span>(<span style="color: slateblue;">-1</span>, <span style="color: slateblue;">-2</span>, <span style="color: slateblue;">3</span>)<br>sol1 = <span style="color: #11e056;">quad</span>.x1 <span style="color: grey;">#sol1 = 1</span><br>sol2 = <span style="color: #11e056;">quad</span>.x2 <span style="color: grey;">#sol2 = -3.0</span></code>
+                <code><span style="color: #11e056;">quad</span></span>(<span style="color: slateblue;">1</span>, <span style="color: slateblue;">2</span>, <span style="color: slateblue;">1</span>)<br>sol1 = <span style="color: #11e056;">quad</span>.x0 <span style="color: grey;">#sol1 = -1.0</code>
             </pre>
             <p>You have to use x1 and x2 when there is two diffrent solutions and x0 when there is only one solution.</p>
             <p><strong>among_us(PlayersNumber, lang)</strong><br>Importing code:</p>
@@ -83,15 +84,27 @@
             </pre>
             <p>OUTPUT:</p><img src="assets/img/reg1.PNG" alt="reg1"><img src="assets/img/reg2.PNG" alt="reg2"><img src="assets/img/reg3.PNG" alt="reg3"><img src="assets/img/reg4.PNG" alt="reg4"><img src="assets/img/reg5.PNG" alt="reg5"><p>Then the game start. <br>Aziz: Clean<br>Senpai: bathroom<br>Dan: shower<br>and so on... Any player in any time can stops the game and start voting</p><img src="assets/img/start-voting.PNG" alt="start-voting">
             <p>Btw voting by id not by the name. Let's suppose that most of the votes was on Naomix</p><img src="assets/img/kick1.PNG" alt="kick-crewmate">
-            <p>A crewmate was kicked from the game so we continue like we start, everytime each one say a word related to the original word... Let's suppose that Dan (the imposter) got most of the votes. Means crewmates are winners</p><img src="assets/img/crewmatewon.PNG" alt="crewmates-winning">
+            <p>A crewmate was kicked from the game so we continue like we start, everytime each one say a word relateed to the original word... Let's suppose that Dan (the imposter) got most of the votes. Means crewmates are winners</p><img src="assets/img/crewmatewon.PNG" alt="crewmates-winning">
             <p>Let's suppose that two players got the same amount of votes. Not both of them get kicked from the game. But, no one is eliminated and the game continues</p><img src="assets/img/draw.PNG" alt="no-one-is-eliminated">
             <p>Let's suppose that 3 players still in the game. And one of them got kicked and he is not an imposter. So the game still will only 2 players (an imposter and a crewmate). Therefore, The game is over and the imposter won</p><img src="assets/img/imposterwon.PNG" alt="imposter-winning">
+            <p><strong>bin_rep(n)</strong><br>Importing code:</p>
+            <pre>
+                <code><span style="color: rgb(247, 58, 231);">from</span> <span style="color: #05b2c9;">AzizKitten</span> <span style="color: rgb(247, 58, 231);">import</span> <span style="color: #11e056;">bin_rep</span><br>x = <span style="color: #11e056;">bin_rep</span>(<span style="color: slateblue;">0.1</span>)<br><span style="color: turquoise;">print</span>(<span style="color: orange;">x</span>)<br><span style="color: grey;">OUTPUT:<br>0 01111111011 1001100110011001100110011001100110011001100110011010</span><br></code>
+            </pre>
+            <p>If you want to get one of them you can just do like that:</p>
+            <pre>
+                <code><span style="color: #11e056;">bin_rep</span>(<span style="color: slateblue;">0.1</span>)<br>Sign = <span style="color: #11e056;">bin_rep</span>.sign<span style="color: grey;"> #0</span><br>Exponent = <span style="color: #11e056;">bin_rep</span>.exponent<span style="color: grey;"> #01111111011</span><br>Mantissa = <span style="color: #11e056;">bin_rep</span>.Mantissa<span style="color: grey;"> #1001100110011001100110011001100110011001100110011010</span><br></code>
+            </pre>
+            <p>You can use <strong>bin_rep.mantissa</strong> or <strong>bin_rep.fraction</strong> They are the same</p>
         </section><hr>
 
         <section id="ChangeLog">
             <h2>ChangeLog</h2>
             <h3>version: 10.0.0</h3>
             <p>This is the first release for this Python package. <br>Release date: 19/12/2023<br>If you tracked any bug you can go to <a href="https://github.com/AzizKitten/azizkitten.github.io/issues">Bug Report</a></p>
+            <h3>version: 10.1.0</h3>
+            <h4>What's New?</h4>
+            <p>Added Binary Representaion function: <strong>bin_rep()</strong><br>Added complex numbers for the <strong>root()</strong> function<br>Changed name for <strong>mental_calculation</strong> to <strong>ment_calc</strong><br>Fixed a text shown in the output for <strong>ment_calc()</strong> function<br>Release date: 28/12/2023<br>If you tracked any bug you can go to <a href="https://github.com/AzizKitten/azizkitten.github.io/issues">Bug Report</a></p>
         </section><hr>
 
         <section id="license">
