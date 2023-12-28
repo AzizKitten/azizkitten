@@ -72,6 +72,8 @@ code {
     display: block;
     overflow-x: auto;
     line-height: 1.4;
+    white-space: wrap;
+    word-break: break-all;
 }
 
 pre {
