@@ -30,7 +30,7 @@ var currentYear = new Date().getFullYear();
 document.querySelectorAll('.button').forEach(item => {
     item.addEventListener('click', event => {
       const url = item.getAttribute('data-url');
-      window.open(url, '_blank');
+      window.open(url);
     });
   });
   
