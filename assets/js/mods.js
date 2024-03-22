@@ -45,3 +45,7 @@ function about_ds() {
 function about_jbc() {
     alert("This mod doesn't need to run a command or nothing. Just activate the mod into your world and everything will works fine. It's mechanic is to make you lag in the air after placing the boat so you have a bit enough time to get on the boat.")
 }
+
+function about_pnt() {
+    alert("This mod doesn't need to run a command or anything. Just activate the mod into your world and everything will works fine. It's mechanic is to give you the ability to use nametag on players.")
+}
