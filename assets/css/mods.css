@@ -168,7 +168,7 @@ nav {
     object-fit: cover;
   }
   
-  #mods {
+  .mods-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
