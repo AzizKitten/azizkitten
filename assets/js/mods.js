@@ -49,3 +49,7 @@ function about_jbc() {
 function about_pnt() {
     alert("This mod doesn't need to run a command or anything. Just activate the mod into your world and everything will works fine. It's mechanic is to give you the ability to use nametag on players.")
 }
+
+function comming_soon() {
+    alert("Comming Soon")
+}
