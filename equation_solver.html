@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equations</title>
+    <link rel="stylesheet" href="assets/css/equation_solver.css">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Quadratic Equation Solver</h1>
+        <div class="input-group">
+            <input required type="text" id="a1" placeholder="a"><br>
+            <input required type="text" id="b2" placeholder="b"><br>
+            <input required type="text" id="c3" placeholder="c">
+        </div>
+        <button id="submit-quad">Submit</button>
+        <p id="quad-output"></p>
+        <hr>
+        <h1>Cubic Equation Solver</h1>
+        <div class="input-group">
+            <input required type="text" id="a" placeholder="a"><br>
+            <input required type="text" id="b" placeholder="b"><br>
+            <input required type="text" id="c" placeholder="c"><br>
+            <input required type="text" id="d" placeholder="d">
+        </div>
+        <button id="submit-cubic">Submit</button>
+        <p id="cubic-output"></p>
+    </div>
+    <py-config style="display: none;">
+        packages = ['AzizKitten']
+    </py-config>
+    <br>
+    <py-script style="display: none;">
+        from pyscript import Element
+        from AzizKitten import cubic, quad
+        def cubic_process_input(event):
+            try:
+                a = Element("a").element.value
+                b = Element("b").element.value
+                c = Element("c").element.value
+                d = Element("d").element.value
+                solutions = cubic(float(a),float(b),float(c),float(d))
+                if float(b) >= 0:
+                    b_sign = "+"
+                else:
+                    b = abs(float(b))
+                    b_sign = "-"
+                if float(c) >= 0:
+                    c_sign = "+"
+                else:
+                    c = abs(float(c))
+                    c_sign = "-"
+                if float(d) >= 0:
+                    d_sign = "+"
+                else:
+                    d = abs(float(d))
+                    d_sign = "-"
+                for i in range(len(solutions)):
+                    if type(solutions[i]) is complex:
+                        cubic_output = f"{a}x³ {b_sign} {b}x² {c_sign} {c}x {d_sign} {d} = 0<br>S<sub>ℂ</sub> = {solutions}"
+                        break
+                    else:
+                        cubic_output = f"{a}x³ {b_sign} {b}x² {c_sign} {c}x {d_sign} {d} = 0<br>S<sub>ℝ</sub> = {solutions}"
+            except:
+                cubic_output = "Please enter valid numbers."
+            Element("cubic-output").element.innerHTML = cubic_output
+        def quad_process_input(event):
+            try:
+                a = Element("a1").element.value
+                b = Element("b2").element.value
+                c = Element("c3").element.value
+                solutions = quad(float(a),float(b),float(c))
+                if float(b) >= 0:
+                    b_sign = "+"
+                else:
+                    b = abs(float(b))
+                    b_sign = "-"
+                if float(c) >= 0:
+                    c_sign = "+"
+                else:
+                    c = abs(float(c))
+                    c_sign = "-"
+                for i in range(len(solutions)):
+                    if type(solutions[i]) is complex:
+                        quad_output = f"{a}x² {b_sign} {b}x {c_sign} {c} = 0<br>S<sub>ℂ</sub> = {solutions}"
+                        break
+                    else:
+                        quad_output = f"{a}x² {b_sign} {b}x {c_sign} {c} = 0<br>S<sub>ℝ</sub> = {solutions}"
+            except:
+                quad_output = "Please enter valid numbers."
+            Element("quad-output").element.innerHTML = quad_output
+        Element("submit-quad").element.onclick = quad_process_input
+        Element("submit-cubic").element.onclick = cubic_process_input
+    </py-script>
+</body>
+</html>
