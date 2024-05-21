@@ -4,11 +4,14 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #282c34;
+    background-image: url(../img/equations_background.jpg);
     margin: 0;
 }
+h1, p {
+    color: white;
+}
 .container {
-    background: #009487;
+    background: #282c34;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
