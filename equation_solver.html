@@ -14,8 +14,8 @@
         <h1>Quadratic Equation Solver</h1>
         <div class="input-group">
             <input required type="text" id="a1" placeholder="a"><br>
-            <input required type="text" id="b2" placeholder="b"><br>
-            <input required type="text" id="c3" placeholder="c">
+            <input required type="text" id="b1" placeholder="b"><br>
+            <input required type="text" id="c1" placeholder="c">
         </div>
         <button id="submit-quad">Solve</button>
         <p id="quad-output"></p>
@@ -29,6 +29,17 @@
         </div>
         <button id="submit-cubic">Solve</button>
         <p id="cubic-output"></p>
+        <hr>
+        <h1>Quartic Equation Solver</h1>
+        <div class="input-group">
+            <input required type="text" id="a2" placeholder="a"><br>
+            <input required type="text" id="b2" placeholder="b"><br>
+            <input required type="text" id="c2" placeholder="c"><br>
+            <input required type="text" id="d2" placeholder="d"><br>
+            <input required type="text" id="e2" placeholder="e">
+        </div>
+        <button id="submit-quartic">Solve</button>
+        <p id="quartic-output"></p>
     </div>
     <py-config style="display: none;">
         packages = ['AzizKitten']
@@ -36,7 +47,44 @@
     <br>
     <py-script style="display: none;">
         from pyscript import Element
-        from AzizKitten import cubic, quad
+        from AzizKitten import quartic, cubic, quad
+        def quartic_process_input(event):
+            try:
+                a = Element("a2").element.value
+                b = Element("b2").element.value
+                c = Element("c2").element.value
+                d = Element("d2").element.value
+                e = Element("e2").element.value
+                solutions = quartic(float(a),float(b),float(c),float(d), float(e))
+                if float(b) >= 0:
+                    b_sign = "+"
+                else:
+                    b = abs(float(b))
+                    b_sign = "-"
+                if float(c) >= 0:
+                    c_sign = "+"
+                else:
+                    c = abs(float(c))
+                    c_sign = "-"
+                if float(d) >= 0:
+                    d_sign = "+"
+                else:
+                    d = abs(float(d))
+                    d_sign = "-"
+                if float(e) >= 0:
+                    e_sign = "+"
+                else:
+                    e = abs(float(e))
+                    e_sign = "-"
+                for i in range(len(solutions)):
+                    if type(solutions[i]) is complex:
+                        quartic_output = f"{a}x⁴ {b_sign} {b}x³ {c_sign} {c}x² {d_sign} {d}x {e_sign} {e} = 0<br>S<sub>ℂ</sub> = {solutions}"
+                        break
+                    else:
+                        quartic_output = f"{a}x⁴ {b_sign} {b}x³ {c_sign} {c}x² {d_sign} {d}x {e_sign} {e} = 0<br>S<sub>ℝ</sub> = {solutions}"
+            except:
+                quartic_output = "Please enter valid numbers."
+            Element("quartic-output").element.innerHTML = quartic_output
         def cubic_process_input(event):
             try:
                 a = Element("a").element.value
@@ -71,8 +119,8 @@
         def quad_process_input(event):
             try:
                 a = Element("a1").element.value
-                b = Element("b2").element.value
-                c = Element("c3").element.value
+                b = Element("b1").element.value
+                c = Element("c1").element.value
                 solutions = quad(float(a),float(b),float(c))
                 if float(b) >= 0:
                     b_sign = "+"
@@ -95,6 +143,7 @@
             Element("quad-output").element.innerHTML = quad_output
         Element("submit-quad").element.onclick = quad_process_input
         Element("submit-cubic").element.onclick = cubic_process_input
+        Element("submit-quartic").element.onclick = quartic_process_input
     </py-script>
 </body>
 </html>
