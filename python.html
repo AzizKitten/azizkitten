@@ -63,6 +63,7 @@
             <p><li>cbrt(x)</li>: Calculate the cubic root of a number.</p>
             <p><li>radians(x)</li>: Convert degrees to radians.</p>
             <p><li>degrees(x)</li>: Convert radians to degrees.</p>
+            <p><li>derivative(func, value)</li>: find the derivative of the function 'func' at a specific value</p>
             <p><li>among_us(PlayersNumber, lang)</li> : This is a good game to play it with your friends or your family. And it is not the among us that you know. This is a little diffrent. Every Player take the phone and register his name. He has a chance to be a crewmate or an imposter. If he got crewmate he will get a word that each crewmate will get it. However, the imposter will not get it. After you register your name press enter to hide what you get and give the phone to the next player to register himself. Therefore, the first one that he registred himself start by saying a word related to the original one. Then next player say another word and so on... But the imposter doesn't know what is the word so he tries his best to know them what are they talking about and say a word. After some turns anyone can stop the game and start voting. Each one vote for what he want to kick and who gets the most vote he get out of the game. If he is the imposter so crewmates won. If not, the game continues until the importer get kicked or still only 2 players so the imposter won. <strong>NOTE: lang</strong> is the language of the word (ar for arabic / fr for french / eng for english (default)).</Em></p>
         </section><hr>
 
@@ -111,7 +112,10 @@
             </pre></p><p><strong>lcm(a, b)</strong><br>Importing code:</p>
             <pre>
                 <code><span style="color: rgb(247, 58, 231);">from</span> <span style="color: #05b2c9;">AzizKitten</span> <span style="color: rgb(247, 58, 231);">import</span> <span style="color: #11e056;">lcm</span><br>x = <span style="color: #11e056;">lcm</span>(<span style="color: slateblue;">4</span>, <span style="color: slateblue;">2</span>)<br><span style="color: turquoise;">print</span>(<span style="color: orange;">x</span>)<br><span style="color: grey;">OUTPUT:<br>4</span></code>
-            </pre></p>
+            </pre><p><strong>factorial(n)</strong><br>Importing code:</p>
+            <pre>
+                <code><span style="color: rgb(247, 58, 231);">from</span> <span style="color: #05b2c9;">AzizKitten</span> <span style="color: rgb(247, 58, 231);">import</span> <span style="color: #11e056;">factorial</span><br>x = <span style="color: #11e056;">factorial</span>(<span style="color: slateblue;">5</span>)<br><span style="color: turquoise;">print</span>(<span style="color: orange;">x</span>)<br>y = <span style="color: #11e056;">factorial</span>(<span style="color: slateblue;">1/2</span>)<br><span style="color: turquoise;">print</span>(<span style="color: orange;">y</span>)<br><span style="color: grey;">OUTPUT:<br>120<br>0.8862127834776166</span></code>
+            </pre>
             <p><strong>integrate(integrand, a, b)</strong><br>Importing code:</p>
             <pre>
                 <code><span style="color: rgb(247, 58, 231);">from</span> <span style="color: #05b2c9;">AzizKitten</span> <span style="color: rgb(247, 58, 231);">import</span> <span style="color: #11e056;">integrate</span><br><span style="color: turquoise;">def</span> <span style="color: #11e056;">integrand</span>(<span style="color: slateblue;">x</span>):<br><span style="color: turquoise;">&nbsp;&nbsp;&nbsp;&nbsp;return</span> <span style="color: orange;">x</span>**3 - 3*<span style="color: orange;">x</span>**2 + 2*<span style="color: orange;">x</span><br>x = <span style="color: #11e056;">integrate</span>(<span style="color: slateblue;">integrand</span>, <span style="color: slateblue;">0</span>, <span style="color: slateblue;">4</span>)<br><span style="color: turquoise;">print</span>(<span style="color: orange;">x</span>)<br><span style="color: grey;">OUTPUT:<br>16.0</span></code>
@@ -140,6 +144,10 @@
             <p><strong>degrees(x)</strong><br>Importing code:</p>
             <pre>
                 <code><span style="color: rgb(247, 58, 231);">from</span> <span style="color: #05b2c9;">AzizKitten</span> <span style="color: rgb(247, 58, 231);">import</span> <span style="color: #11e056;">degrees</span>, <span style="color: #11e056;">pi</span><br>x = <span style="color: #11e056;">degrees</span>(<span style="color: slateblue;">pi/4</span>)<br><span style="color: grey;">OUTPUT:<br>45.0</span><br></code>
+            </pre>
+            <p><strong>derivative(func, value)</strong><br>Importing code:</p>
+            <pre>
+                <code><span style="color: rgb(247, 58, 231);">from</span> <span style="color: #05b2c9;">AzizKitten</span> <span style="color: rgb(247, 58, 231);">import</span> <span style="color: #11e056;">derivative</span>, <span style="color: #11e056;">pi</span><br><span style="color: turquoise;">def</span> <span style="color: #11e056;">f</span>(<span style="color: slateblue;">x</span>):<br><span style="color: turquoise;">&nbsp;&nbsp;&nbsp;&nbsp;return</span> <span style="color: orange;">x</span>**3<br>x = <span style="color: #11e056;">derivative</span>(<span style="color: slateblue;">f</span>, <span style="color: slateblue;">2</span>)<br><span style="color: grey;">OUTPUT:<br>12.000000992884452</span><br></code>
             </pre>
             <p><strong>among_us(PlayersNumber, lang)</strong><br>Importing code:</p>
             <pre>
@@ -179,7 +187,7 @@
             <p>Removed <strong>limit</strong> solving function<br>fixed an issue with <strong>factorial</strong> function<br>Release date: 30/05/2024<br>If you tracked any bug you can go to <a href="https://github.com/AzizKitten/azizkitten.github.io/issues">Bug report</a></p>
             <h3>version: 11.4.0</h3>
             <h4>What's new?</h4>
-            <p>Added <strong>derivative</strong> function.</p>
+            <p>Added <strong>derivative</strong> function.<br>Release date: 04/06/2024<br>If you tracked any bug you can go to <a href="https://github.com/AzizKitten/azizkitten.github.io/issues">Bug report</a></p>
         </section><hr>
 
         <section id="license">
