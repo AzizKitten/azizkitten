@@ -40,6 +40,18 @@
         </div>
         <button id="submit-quartic">Solve</button>
         <p id="quartic-output"></p>
+        <hr>
+        <h1>Quintic Equation Solver</h1>
+        <div class="input-group">
+            <input required type="text" id="a3" placeholder="a"><br>
+            <input required type="text" id="b3" placeholder="b"><br>
+            <input required type="text" id="c3" placeholder="c"><br>
+            <input required type="text" id="d3" placeholder="d"><br>
+            <input required type="text" id="e3" placeholder="e"><br>
+            <input required type="text" id="f3" placeholder="f">
+        </div>
+        <button id="submit-quintic">Solve</button>
+        <p id="quintic-output"></p>
     </div>
     <py-config style="display: none;">
         packages = ['AzizKitten']
@@ -47,7 +59,50 @@
     <br>
     <py-script style="display: none;">
         from pyscript import Element
-        from AzizKitten import quartic, cubic, quad
+        from AzizKitten import quintic, quartic, cubic, quad
+        def quintic_process_input(event):
+            try:
+                a = Element("a3").element.value
+                b = Element("b3").element.value
+                c = Element("c3").element.value
+                d = Element("d3").element.value
+                e = Element("e3").element.value
+                f = Element("f3").element.value
+                solutions = quintic(float(a),float(b),float(c),float(d), float(e), float(f))
+                if float(b) >= 0:
+                    b_sign = "+"
+                else:
+                    b = b[1::]
+                    b_sign = "-"
+                if float(c) >= 0:
+                    c_sign = "+"
+                else:
+                    c = c[1::]
+                    c_sign = "-"
+                if float(d) >= 0:
+                    d_sign = "+"
+                else:
+                    d = d[1::]
+                    d_sign = "-"
+                if float(e) >= 0:
+                    e_sign = "+"
+                else:
+                    e = e[1::]
+                    e_sign = "-"
+                if float(f) >= 0:
+                    f_sign = "+"
+                else:
+                    f = f[1::]
+                    f_sign = "-"
+                for i in range(len(solutions)):
+                    if type(solutions[i]) is complex:
+                        quintic_output = f"{a}x⁵ {b_sign} {b}x⁴ {c_sign} {c}x³ {d_sign} {d}x² {e_sign} {e}x {f_sign} {f} = 0<br>S<sub>ℂ</sub> = {solutions}"
+                        break
+                    else:
+                        quintic_output = f"{a}x⁵ {b_sign} {b}x⁴ {c_sign} {c}x³ {d_sign} {d}x² {e_sign} {e}x {f_sign} {f} = 0<br>S<sub>ℝ</sub> = {solutions}"
+            except:
+                quintic_output = "Please enter valid numbers."
+            Element("quintic-output").element.innerHTML = quintic_output
         def quartic_process_input(event):
             try:
                 a = Element("a2").element.value
@@ -144,6 +199,7 @@
         Element("submit-quad").element.onclick = quad_process_input
         Element("submit-cubic").element.onclick = cubic_process_input
         Element("submit-quartic").element.onclick = quartic_process_input
+        Element("submit-quintic").element.onclick = quintic_process_input
     </py-script>
 </body>
 </html>
